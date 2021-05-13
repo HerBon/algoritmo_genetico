@@ -23,7 +23,10 @@ def generar_poblacion():
             poblacion1[f].append(random.randint(0, 1))
     return poblacion1
 
-
+poblacion_inicio = generar_poblacion()
+def escoger_mejores():
+    
+    pass
 
 #print(generar_poblacion())
 '''

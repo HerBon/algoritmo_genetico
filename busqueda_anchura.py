@@ -6,8 +6,8 @@ class nodo():
         self.padre = padre
 
     def generar_hijos(self):
+        
         self.hijos = []
-        #estado_aux = self.estado
         for c in range(len(self.estado)-1):
             hijo = copy.deepcopy(self.estado)
             hijo[c] = self.estado[c+1]

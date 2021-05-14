@@ -1,5 +1,6 @@
 import copy 
 from time import time
+from typing import Reversible
 
 class nodo():
     def __init__(self, estado, padre):
@@ -50,8 +51,8 @@ def busqueda_anchura(estado_inicial1, estado_solucion1):
         if nodo_actual.estado == estado_solucion1:
             resuelto = True
             print(nodo_actual.estado, "solucion = ",nodos_desplegados-1)
-            camino=busca_alPadre(nodo_actual)
-            print(" soy el cammino = ",camino)
+            camino =list(reversed(busca_alPadre(nodo_actual))) 
+            print("Ruta mas corta = ",camino)
             return nodo_actual
         else:           
             lista_hijos = copy.deepcopy(nodo_actual.generar_hijos())
@@ -63,5 +64,5 @@ def busqueda_anchura(estado_inicial1, estado_solucion1):
 t_inicio = time()
 busqueda_anchura(estado_inicial,estado_solucion)
 t_final = time()
-print(t_final- t_inicio)
+print(t_final- t_inicio,"Segundos")
 

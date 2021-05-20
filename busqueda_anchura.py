@@ -14,12 +14,7 @@ class nodo():
             hijo[c+1]=self.estado[c]
             self.hijos.append(hijo)
         return self.hijos
-    
-
-
-#nodo_inicial = nodo([2,3,5,1,4],None)
 estado_inicial = [2,3,5,1,4]
-#print(nodo_inicial.generar_hijos())
 estado_solucion = [1,2,3,4,5]
 
 def buscar_en_lista(lista1, nodo):
@@ -45,6 +40,7 @@ def busqueda_anchura(estado_inicial1, estado_solucion1):
     nodos_frontera.append(nodo_raiz)
     nodos_desplegados=0
     while (not resuelto) and nodos_frontera != []:
+        #en este debes ordenar la frontera osea aplicar la huristica
         nodo_actual = nodos_frontera.pop(0)
         nodos_desplegados = nodos_desplegados+1
         print(nodo_actual.estado, "desplegados =",nodos_desplegados-1)        
